@@ -268,107 +268,9 @@
             position: relative;
         }
 
-        .logo-container {
-            position: absolute;
-            left: 50%;
-            transform: translateX(-50%);
-            z-index: 10;
-        }
-
-        .logo {
-            display: block;
-            width: 180px;
-            height: auto;
-            position: relative;
-            transform-style: preserve-3d;
-            animation: logo-float 6s ease-in-out infinite;
-            filter: 
-                drop-shadow(0 0 20px rgba(255, 215, 0, 0.6))
-                drop-shadow(0 0 40px rgba(255, 215, 0, 0.4))
-                drop-shadow(0 10px 20px rgba(0, 0, 0, 0.8));
-            transition: transform 0.3s ease;
-        }
-
-        .logo:hover {
-            transform: scale(1.05) rotateY(10deg);
-            filter: 
-                drop-shadow(0 0 30px rgba(255, 215, 0, 0.8))
-                drop-shadow(0 0 60px rgba(255, 215, 0, 0.6))
-                drop-shadow(0 15px 30px rgba(0, 0, 0, 0.9));
-        }
-
-        .logo img {
-            width: 100%;
-            height: auto;
-            display: block;
-        }
-
-        @keyframes logo-float {
-            0%, 100% {
-                transform: translateX(-50%) translateY(0) rotateX(0deg);
-            }
-            25% {
-                transform: translateX(-50%) translateY(-3px) rotateX(2deg);
-            }
-            50% {
-                transform: translateX(-50%) translateY(0) rotateX(0deg);
-            }
-            75% {
-                transform: translateX(-50%) translateY(-3px) rotateX(-2deg);
-            }
-        }
-
-        /* 3D depth effect overlay */
-        .logo::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: linear-gradient(
-                135deg,
-                rgba(255, 255, 255, 0.2) 0%,
-                transparent 40%,
-                transparent 60%,
-                rgba(0, 0, 0, 0.2) 100%
-            );
-            pointer-events: none;
-            border-radius: 4px;
-            opacity: 0.6;
-        }
-
-        /* Shine effect */
-        .logo::after {
-            content: '';
-            position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background: linear-gradient(
-                45deg,
-                transparent 30%,
-                rgba(255, 255, 255, 0.3) 50%,
-                transparent 70%
-            );
-            transform: rotate(45deg);
-            animation: logo-shine 4s infinite;
-            pointer-events: none;
-        }
-
-        @keyframes logo-shine {
-            0% {
-                left: -100%;
-            }
-            50%, 100% {
-                left: 150%;
-            }
-        }
-
-        /* Fallback logo text */
+        /* Fallback logo text for hero section */
         .logo-text {
-            font-size: 2rem;
+            font-size: 3rem;
             font-weight: 900;
             line-height: 0.9;
             text-align: center;
@@ -386,6 +288,8 @@
             filter: drop-shadow(0 0 20px rgba(255, 215, 0, 0.6));
             display: block;
             letter-spacing: 0.05em;
+            margin: 0 auto;
+            width: fit-content;
         }
 
         .nav-links {
@@ -662,6 +566,124 @@
             );
             border-radius: 50%;
             box-shadow: 0 0 15px var(--gold-royal);
+        }
+
+        /* Hero Logo Styling */
+        .hero-logo-container {
+            margin-bottom: 3rem;
+            text-align: center;
+            position: relative;
+            z-index: 3;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        /* Imgur Embed Styling */
+        .hero-logo-container .imgur-embed-pub {
+            max-width: 400px !important;
+            width: 100% !important;
+            background: transparent !important;
+            border: none !important;
+            padding: 0 !important;
+            margin: 0 !important;
+        }
+        
+        .hero-logo-container .imgur-embed-pub img {
+            width: 100% !important;
+            height: auto !important;
+            filter: 
+                drop-shadow(0 0 30px rgba(255, 215, 0, 0.8))
+                drop-shadow(0 0 60px rgba(255, 215, 0, 0.6))
+                drop-shadow(0 20px 40px rgba(0, 0, 0, 0.9));
+            animation: hero-logo-float 8s ease-in-out infinite;
+        }
+
+        .hero-logo {
+            width: 400px;
+            max-width: 80vw;
+            height: auto;
+            display: block;
+            margin: 0 auto;
+            position: relative;
+            transform-style: preserve-3d;
+            animation: hero-logo-float 8s ease-in-out infinite;
+            filter: 
+                drop-shadow(0 0 30px rgba(255, 215, 0, 0.8))
+                drop-shadow(0 0 60px rgba(255, 215, 0, 0.6))
+                drop-shadow(0 20px 40px rgba(0, 0, 0, 0.9));
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .hero-logo:hover {
+            transform: scale(1.08) rotateY(5deg);
+            filter: 
+                drop-shadow(0 0 40px rgba(255, 215, 0, 1))
+                drop-shadow(0 0 80px rgba(255, 215, 0, 0.8))
+                drop-shadow(0 25px 50px rgba(0, 0, 0, 1));
+        }
+
+        @keyframes hero-logo-float {
+            0%, 100% {
+                transform: translateY(0) rotateX(0deg);
+            }
+            25% {
+                transform: translateY(-8px) rotateX(3deg);
+            }
+            50% {
+                transform: translateY(0) rotateX(0deg);
+            }
+            75% {
+                transform: translateY(-8px) rotateX(-3deg);
+            }
+        }
+
+        /* Enhanced 3D depth effect for hero logo */
+        .hero-logo::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(
+                135deg,
+                rgba(255, 255, 255, 0.3) 0%,
+                transparent 40%,
+                transparent 60%,
+                rgba(0, 0, 0, 0.3) 100%
+            );
+            pointer-events: none;
+            border-radius: 8px;
+            opacity: 0.7;
+        }
+
+        /* Enhanced shine effect for hero logo */
+        .hero-logo::after {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(
+                45deg,
+                transparent 30%,
+                rgba(255, 255, 255, 0.4) 50%,
+                transparent 70%
+            );
+            transform: rotate(45deg);
+            animation: hero-logo-shine 6s infinite;
+            pointer-events: none;
+        }
+
+        @keyframes hero-logo-shine {
+            0% {
+                left: -100%;
+            }
+            50%, 100% {
+                left: 150%;
+            }
         }
 
         .hero p {
@@ -1342,9 +1364,6 @@
                 display: none;
             }
 
-            .logo {
-                width: 140px;
-            }
 
             header {
                 padding: 0.75rem 0;
@@ -1397,6 +1416,15 @@
 
             .hero .gold-text::after {
                 height: 2px;
+            }
+
+            .hero-logo {
+                width: 300px;
+                max-width: 90vw;
+            }
+
+            .hero-logo-container {
+                margin-bottom: 2rem;
             }
         }
 
@@ -1489,13 +1517,6 @@
                 <li><a href="#pricing">Pricing</a></li>
             </ul>
             
-            <div class="logo-container">
-                <a href="#" class="logo" aria-label="Ascend Valet Home">
-                    <img src="https://i.imgur.com/IqNVwFX.png" 
-                         alt="Ascend Valet - Premium Valet Trash Services" 
-                         onerror="this.style.display='none'; this.parentElement.innerHTML='<span class=\'logo-text\'>ASCEND<br>VALET</span>';" />
-                </a>
-            </div>
             
             <ul class="nav-links right">
                 <li><a href="#team">Team</a></li>
@@ -1510,6 +1531,11 @@
     <section class="hero">
         <div class="gold-particles"></div>
         <div class="hero-content">
+            <div class="hero-logo-container">
+                <blockquote class="imgur-embed-pub" lang="en" data-id="a/IqNVwFX" style="margin: 0; display: inline-block;">
+                    <a href="//imgur.com/a/IqNVwFX">Ascend</a>
+                </blockquote>
+            </div>
             <h1>Elevate Your Property with <span class="gold-text gold-drip">Premium Valet Services</span></h1>
             <p>Transform trash management into a luxury amenity. We handle the details so your residents experience the excellence they deserve.</p>
             <a href="#booking" class="cta-button" style="font-size: 1.2rem; padding: 1rem 3rem;">Book Your Consultation</a>
@@ -1585,32 +1611,20 @@
     <!-- Pricing Section -->
     <section id="pricing" class="section-alt">
         <h2>Simple, Transparent <span class="metallic-gold">Pricing</span></h2>
-        <p style="font-size: 1.2rem; color: rgba(255, 255, 255, 0.7); max-width: 800px; margin: 0 auto 1rem; text-align: center;">No minimums. No hidden fees. Just premium service that pays for itself in resident satisfaction.</p>
+        <p style="font-size: 1.2rem; color: rgba(255, 255, 255, 0.7); max-width: 800px; margin: 0 auto 1rem; text-align: center;">Elevate your property with service tiers designed for luxury living.</p>
         
-        <div class="pricing-container">
-            <div class="pricing-card">
-                <h3>Standard Service</h3>
-                <div class="price">$25</div>
-                <div class="price-term">per unit/month</div>
-                <ul class="pricing-features">
-                    <li>Valet trash collection</li>
-                    <li>Premium recycling program</li>
-                    <li>Community maintenance</li>
-                    <li>Waste management coordination</li>
-                    <li>Flexible contract terms</li>
-                    <li>8am-5pm EST support</li>
-                </ul>
-                <a href="#booking" class="cta-button">Get Started</a>
-            </div>
-            
+        <div class="pricing-container" style="grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); max-width: 1000px; margin: 4rem auto;">
             <div class="pricing-card featured">
-                <div class="pricing-badge">MOST POPULAR</div>
+                <div class="pricing-badge">BEST VALUE</div>
                 <h3>Premium Partnership</h3>
                 <div class="price">$20</div>
                 <div class="price-term">per unit/month</div>
                 <ul class="pricing-features">
-                    <li>Everything in Standard</li>
-                    <li>Priority support</li>
+                    <li>5-night valet trash collection</li>
+                    <li>Premium recycling program</li>
+                    <li>Community maintenance</li>
+                    <li>Waste management coordination</li>
+                    <li>Priority support 7am-9pm EST</li>
                     <li>2+ year commitment discount</li>
                     <li>Quarterly bulk pickup (Q3 2026)</li>
                     <li>Security monitoring (Q3 2026)</li>
@@ -1619,19 +1633,31 @@
                 <a href="#booking" class="cta-button" style="background: var(--black); color: var(--gold);">Partner With Us</a>
             </div>
             
-            <div class="pricing-card">
-                <h3>Enterprise Solution</h3>
-                <div class="price" style="font-size: 2.5rem;">Custom</div>
-                <div class="price-term">tailored to your portfolio</div>
-                <ul class="pricing-features">
-                    <li>Everything in Premium</li>
-                    <li>Multi-property discounts</li>
-                    <li>Custom service packages</li>
-                    <li>White-glove onboarding</li>
-                    <li>Portfolio-wide reporting</li>
-                    <li>Direct executive access</li>
+            <div class="pricing-card" style="background: linear-gradient(135deg, #1a1a1a 0%, #0a0a0a 50%, #1a1a1a 100%); border: 2px solid var(--gold-royal);">
+                <div class="pricing-badge" style="background: var(--gold-royal); color: var(--black);">ULTRA LUXURY</div>
+                <h3 style="background: linear-gradient(135deg, var(--gold-royal) 0%, var(--gold-metallic) 100%); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;">Tailored To Luxury</h3>
+                <div class="price" style="background: linear-gradient(135deg, var(--gold-royal) 0%, var(--gold-metallic) 50%, var(--gold-royal) 100%); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;">$125</div>
+                <div class="price-term">per unit/month</div>
+                <ul class="pricing-features" style="color: rgba(255, 215, 0, 0.9);">
+                    <li><strong>Concierge-Level Service:</strong></li>
+                    <li>7-night collection with custom schedules</li>
+                    <li>Personal valet preference profiles</li>
+                    <li>Same-day special pickup requests</li>
+                    <li>White-glove package handling</li>
+                    <li>Holiday decoration disposal</li>
+                    <li><strong>Exclusive Amenities:</strong></li>
+                    <li>Monthly deep-clean of trash areas</li>
+                    <li>Complimentary moving day assistance</li>
+                    <li>VIP text/call direct service line</li>
+                    <li>Quarterly unit door sanitization</li>
+                    <li>Pet waste station premium service</li>
+                    <li><strong>Lifestyle Integration:</strong></li>
+                    <li>Smart home notification system</li>
+                    <li>Resident app with pickup tracking</li>
+                    <li>24/7 emergency response team</li>
+                    <li>Exclusive resident rewards program</li>
                 </ul>
-                <a href="#booking" class="cta-button">Contact Sales</a>
+                <a href="#booking" class="cta-button" style="background: linear-gradient(135deg, var(--gold-royal) 0%, var(--gold-metallic) 100%); color: var(--black); font-weight: 900;">Experience Excellence</a>
             </div>
         </div>
     </section>
@@ -1957,6 +1983,10 @@
             mouseX = e.clientX;
             mouseY = e.clientY;
         });
+
     </script>
+    
+    <!-- Imgur Embed Script -->
+    <script async src="//s.imgur.com/min/embed.js" charset="utf-8"></script>
 </body>
 </html>
