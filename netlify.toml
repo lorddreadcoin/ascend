@@ -1,6 +1,6 @@
 [[redirects]]
   from = "/"
-  to = "/files/ascend-valet-website.html"
+  to = "/ascend-valet-refined.html"
   status = 200
 
 [[headers]]
