@@ -39,3 +39,6 @@ temp/
 
 # Deployment config (contains sensitive info)
 windsurf_deployment.yaml
+
+# Local Netlify folder
+.netlify
